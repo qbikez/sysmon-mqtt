@@ -155,7 +155,7 @@ mqtt_json_clean() {
 }
 
 device=$(mqtt_json_clean "$device_name")
-ha_topic=$(mqtt_json_clean "$SYSMON_HA_TOPIC")
+ha_topic="$SYSMON_HA_TOPIC"
 
 # Test the broker (assumes Mosquitto) — exits on failure
 mosquitto_sub -C 1 -h "$mqtt_host" -t \$SYS/broker/version
